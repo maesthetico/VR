@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Practical Assigment #2</title>
+<style>
+    body {
+        background-color: #EEEEEE;
+        font-family: Arial, sans-serif;
+    }
+    
+    .control-panel {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .control-group {
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 150px;
+        margin-right: 5px;
+    }
+    
+    button {
+        padding: 6px 12px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    button#toggleButton {
+        background-color: #2196F3;
+    }
+    
+    button#toggleButton:hover {
+        background-color: #0b7dda;
+    }
+    
+    #connectionStatus {
+        font-weight: bold;
+        color: red;
+        margin-left: 10px;
+    }
+</style>
+
+<script src="./Utils/trackball-rotator.js"></script>
+<script src="./Utils/m4.js"></script>
+<script src="./shader.gpu"></script>
+<script src="./Model.js"></script>
+<script src="./StereoCamera.js"></script>
+<script src="./Texture.js"></script>
+<script src="./main.js"></script>
+
+</head>
+<body onload="init()">
+
+<div id="canvas-holder">
+   <canvas width="800" height="800" id="webglcanvas" style="background-color:black"></canvas>
+</div>
+
+<div class="control-panel">
+    <h3>Connecting to smartphone</h3>
+    <div class="control-group">
+        <label for="phoneIP">IP-adress:</label>
+        <input type="text" id="phoneIP" placeholder="" value="">
+        
+        <label for="phonePort">Port:</label>
+        <input type="text" id="phonePort" placeholder="" value="">
+        
+        <button id="connectButton">Connect</button>
+        <button id="disconnectButton">Disconnect</button>
+        <span id="connectionStatus">Disconnected</span>
+    </div>
+</div>
+
+</body>
+</html>
